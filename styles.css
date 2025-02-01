@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fce4ec;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+h1.question {
+    font-size: 2em;
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.yes {
+    background-color: #4caf50;
+    color: white;
+}
+
+.no {
+    background-color: #f44336;
+    color: white;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #e91e63; /* Dark Pink */
+}
+
+.roses {
+    display: none;
+    margin-top: 20px;
+    font-size: 2em;
+    color: white;
+}
+
+.roses:before {
+    content: "💐";
+}
+
+.no.floating {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) rotate(20deg);
+}
+
+.no.moving {
+    animation: moveAround 3s forwards; /* Moves for 3 seconds */
+}
+
+@keyframes moveAround {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(100px) translateY(-100px);
+    }
+    50% {
+        transform: translateX(-150px) translateY(50px);
+    }
+    75% {
+        transform: translateX(200px) translateY(-50px);
+    }
+    100% {
+        transform: translateX(-300px) translateY(200px);
+        opacity: 0; /* Makes the "No" button disappear after moving */
+    }
+}
